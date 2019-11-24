@@ -1,0 +1,2 @@
+using django allauth for authentication
+finsished at 9.20
