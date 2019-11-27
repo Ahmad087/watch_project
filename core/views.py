@@ -6,5 +6,5 @@ def item_list(request):
         'items': Item.objects.all()
     }
     
-    return render(request, "index.html", context)
+    return render(request, "home-page.html", context)
 # Create your views here.
