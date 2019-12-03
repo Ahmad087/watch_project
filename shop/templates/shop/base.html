@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="base">YRN Stores</a>
+          <a class="navbar-brand" href="{% url 'shop:home' %}">YRN Stores</a>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
@@ -26,14 +26,14 @@
                 <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Register</a>
+                <a class="nav-link" href="{% url 'shop:register' %}">Register</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
               </li>
               {% if item_count > 0 %}
 				    <li class="nav-item">
-					    <a class="nav-link" href="cart_detail">
+					    <a class="nav-link" href="">
 				  	<span class="glypicon glypicon-shopping-cart"></span>({{item_count}})</a>
 				    </li>
 				      {% endif %}

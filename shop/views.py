@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
+from cart.forms import CartAddProductForm
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView
 
 
-def base(request):
+def home(request):
     return render(request = request,
-                  template_name = "shop/base.html")
+                  template_name = "shop/home.html")
 
 def register(request):
     form = UserCreationForm
@@ -34,6 +35,8 @@ def product_detail(request, id, slug):
                                 id=id,
                                 slug=slug,
                                 available=True)
+    cart_product_form = CartAddProductForm()
     return render(request,
                   'shop/product/detail.html',
-                  {'product': product})
+                  {'product': product,
+                  'cart_product_form': cart_product_form})
