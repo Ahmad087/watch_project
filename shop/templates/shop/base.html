@@ -23,13 +23,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'shop:product:product_list' %}">About</a>
+                <a class="nav-link" href="{% url 'shop:product_list' %}">Product</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'shop:register' %}">Register</a>
+                <a class="nav-link" href="signup">Register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="">Contact</a>
               </li>
               {% if item_count > 0 %}
 				    <li class="nav-item">
@@ -43,10 +43,10 @@
           </div>
         </div>
       </nav>
-  <div id="subheader">
+  <div id="subheader">+
     <div class="cart">
-     Your cart is empty
-    </div>
+      your cart
+  </div>
   </div>
   <div id="content">
     {% block content %}

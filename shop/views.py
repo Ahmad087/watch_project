@@ -1,19 +1,27 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView
-
+from django.contrib.auth.models import Group, User
+from .forms import SignUpForm
 
 def home(request):
     return render(request = request,
                   template_name = "shop/home.html")
 
-def register(request):
-    form = UserCreationForm
-    return render(request = request,
-                  template_name = "shop/register.html",
-                  context={"form":form})
+def signupView(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            signup_user = User.objects.get(username=username)
+            customer_group = Group.objects.get(name='Customer')
+            customer_group.user_set.add(signup_user)
+    else:
+        form = SignUpForm()
+    return render(request, 'Accounts/signup.html', {'form':form})
 
 
 def product_list(request, category_slug=None):
