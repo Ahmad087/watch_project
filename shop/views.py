@@ -33,7 +33,7 @@ def signinView(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('shop:product_list')
+                return redirect('product_list')
             else:
                 return redirect('signup')
     else:

@@ -21,9 +21,9 @@ from shop import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cart/', include('cart.urls',namespace='cart')),
-    #path('list/', include('list.urls',namespace='list')),
-    path('', include('shop.urls', namespace='shop')),
+    path('', include('cart.urls',namespace='cart')),
+     path('', include('shop.urls', namespace='shop')),
+ 
 ]
 
 if settings.DEBUG:
