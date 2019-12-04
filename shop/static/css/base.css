@@ -123,8 +123,8 @@ ul.errorlist {
 }
 
 #subheader {
-    background:#ececec;
-    color:#444;
+    background:#682626;
+    color:#000;
     padding:15px 100px;
     overflow:auto;
 }
@@ -138,6 +138,7 @@ ul.errorlist {
 }
 
 #subheader .cart {
+    color:#000;
     float:right;
     padding-top:4px;
 }

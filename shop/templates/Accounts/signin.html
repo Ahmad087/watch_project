@@ -1,6 +1,6 @@
 {% extends "shop/base.html" %}
 {% load crispy_forms_tags %}
-{% load staticfiles %}
+{% load static %}
 {% block metadescription %}
 	Sign in and enjoy the variety of products.
 {% endblock %}
@@ -19,7 +19,7 @@
 				<br>
 				<p>When you create an account with us, you can see your orders history.</p>
 				<br>
-				<a href="{% url 'signup' %}" class="btn btn-secondary">Create New Account</a>
+				<a href="{% url 'accounts:signup' %}" class="btn btn-secondary">Create New Account</a>
 			</div>
 			<div class="col-12 col-sm-12 col-md-12 col-lg-6 bg-light">
 				<div>
