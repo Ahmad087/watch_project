@@ -19,11 +19,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 from shop import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('cart.urls',namespace='cart')),
-     path('', include('shop.urls', namespace='shop')),
- 
+    path('cart/', include('cart.urls',namespace='cart')),
+    path('', include('shop.urls', namespace='shop')),
+    path('orders/', include('orders.urls', namespace='orders')),
+    path('', include('django.contrib.auth.urls')),
+    path('account/create/', views.signupView, name='signup'),
+    path('account/login/', views.signinView, name='signin'),
+    path('account/logout/', views.signoutView, name='signout'),
+    path('account/profile/', views.profile, name='profile'),
+    path('account/edit/', views.edit_profile, name='edit_profile'),
+    path('account/change_password/', views.change_password, name='change_password'),
 ]
 
 if settings.DEBUG:

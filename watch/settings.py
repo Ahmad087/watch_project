@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
-    'crispy_forms'
+    'vouchers.apps.VouchersConfig',
+    'stripe',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -128,5 +130,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
 CART_SESSION_ID = 'cart'
+STRIPE_SECRET_KEY = 'sk_test_O2lu8lsjBZygtS9F7W7PEQR100GuBExuYT'
+STRIPE_PUBLISHABLE_KEY= 'pk_test_rt9IdVxdyzOnqdeW4nP5RZID00wgKnVp8R'

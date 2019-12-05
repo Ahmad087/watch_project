@@ -17,20 +17,27 @@
           <a class="navbar-brand" href="{% url 'shop:home' %}">YRN Stores</a>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'shop:product_list' %}">Product</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="signup">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Contact</a>
-              </li>
+                <li>
+                  <a class='nav-link' href="{% url 'shop:product_list' %}">Products</a>
+               </li>
+                {% if request.user.is_authenticated %}
+                <li>
+                    <a class='nav-link' href="{% url 'signout' %}"> Sign Out <i class="fas fa-sign-out-alt"></i></a>
+                </li>
+                <li>
+                    <a class='nav-link' href="{% url 'profile' %}"> profile <i class="fas fa-sign-out-alt"></i></a>
+                </li>
+                <li>
+                    <a class='nav-link' href="{% url 'edit_profile' %}"> Edit Profile <i class="fas fa-sign-out-alt"></i></a>
+                </li>
+                {% else %}
+                <li>
+                    <a class='nav-link' href="{% url 'signup' %}"> Sign Up <i class="fas fa-user-plus"></i></a>
+                </li>
+                <li>
+                    <a class='nav-link' href="{% url 'signin' %}"> Sign In <i class="fas fa-sign-in-alt"></i></a>
+                </li>
+                {% endif %}
               {% if item_count > 0 %}
 				    <li class="nav-item">
 					    <a class="nav-link" href="">

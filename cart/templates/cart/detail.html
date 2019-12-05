@@ -70,8 +70,28 @@
             </table>
         <p class="text-right">
             <a href="{% url "shop:product_list" %}" class="btn btn-default">Continue Shopping</a>
-            <a href="" class="btn btn-primary">Checkout</a>
+            <a href="{% url 'orders:order_create' %}" class="btn btn-primary">
+                Checkout
+            </a>
         </p>
+        <div class="row">
+                <div class="col-md-12">
+                    <p class="text-right">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="{{data_key}}"
+                                data-name="Online Store"
+                                data-description="{{description}}"
+                                data-amount="{{stripe_total}}"
+                                data-currency="EUR"></script>
+                            
+                        </form>
+                    </p>
+                </div>
+            </div>
+        
         </div>
     </div>
 {% endblock %}
