@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5 , h6 {
 
 a {
     text-decoration:none;
-    color:#5993bb;
+    color:white;
 }
 
 a:hover {
@@ -146,17 +146,22 @@ ul.errorlist {
 #content {
     padding:0 100px;
     overflow:hidden;
+    background-color: white;
+    min-height: 100vh;
 }
 
 #sidebar {
     width:220px;
     padding:30px 20px 0 0;
     float:left;
+    
+
 }
 
 #sidebar ul{
     margin:0;
     padding:0;
+    background-color:grey;
 }
 
 #sidebar ul li {
@@ -167,10 +172,11 @@ ul.errorlist {
 
 #sidebar ul li a {
     display:block;
+    color: white;
 }
 
 #sidebar ul li.selected {
-    background:#5993bb;
+    background:#000000;
     border-radius:4px;
 }
 

@@ -25,6 +25,7 @@ urlpatterns = [
     path('cart/', include('cart.urls',namespace='cart')),
     path('', include('shop.urls', namespace='shop')),
     path('orders/', include('orders.urls', namespace='orders')),
+    path('vouchers/', include('vouchers.urls', namespace='vouchers')),
     path('', include('django.contrib.auth.urls')),
     path('account/create/', views.signupView, name='signup'),
     path('account/login/', views.signinView, name='signin'),
@@ -32,6 +33,7 @@ urlpatterns = [
     path('account/profile/', views.profile, name='profile'),
     path('account/edit/', views.edit_profile, name='edit_profile'),
     path('account/change_password/', views.change_password, name='change_password'),
+  
 ]
 
 if settings.DEBUG:

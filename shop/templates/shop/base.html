@@ -22,6 +22,9 @@
                </li>
                 {% if request.user.is_authenticated %}
                 <li>
+                    <a class='nav-link' href="{% url 'cart:cart_detail' %}">your cart</a>
+                 </li>
+                <li>
                     <a class='nav-link' href="{% url 'signout' %}"> Sign Out <i class="fas fa-sign-out-alt"></i></a>
                 </li>
                 <li>
@@ -29,6 +32,9 @@
                 </li>
                 <li>
                     <a class='nav-link' href="{% url 'edit_profile' %}"> Edit Profile <i class="fas fa-sign-out-alt"></i></a>
+                </li>
+                <li>
+                    <a class='nav-link' href="{% url 'change_password' %}"> change password <i class="fas fa-sign-out-alt"></i></a>
                 </li>
                 {% else %}
                 <li>

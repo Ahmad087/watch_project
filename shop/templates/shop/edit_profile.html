@@ -11,6 +11,10 @@
         {{ form | crispy  }}
         <button type="submit">Submit</button>
     </form>
+    <div class="container">
+        <img src="{{ post.image.url }}" alt="image"/>
+    </div>
+    <P>change password if youd like</P>
     <br>
 </div>
 {% endblock %}

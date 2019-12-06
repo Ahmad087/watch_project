@@ -1,5 +1,7 @@
 from django.db import models
 from shop.models import Product
+from django.core.validators import MinValueValidator, MaxValueValidator
+from vouchers.models import Voucher
 
 class Order(models.Model):
     first_name = models.CharField(max_length=50)
@@ -28,7 +30,14 @@ class OrderItem(models.Model):
                             on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.PositiveIntegerField(default=1)
-
+    voucher = models.ForeignKey(Voucher, 
+                                related_name='orders',
+                                null=True,
+                                blank=True,
+                                on_delete=models.SET_NULL)
+    discount = models.IntegerField(default=0,
+                            validators=[MinValueValidator(0),
+                            MaxValueValidator(100)])
     def __str__(self):
             return '{}'.format(self.id)
 
